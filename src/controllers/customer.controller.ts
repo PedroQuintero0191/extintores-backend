@@ -40,14 +40,6 @@ export const createCustomer = async (
       exting.last_recharge = extingO2m.last_recharge;
       exting.next_recharge = extingO2m.next_recharge;
       exting.history = [];
-      // extingO2m.history.forEach((item: any) => {
-      //   let history: History = new History();
-      //   history.extinguisher = item.extinguisher;
-      //   history.customer = item.customer;
-      //   history.user = item.user;
-      //   history.last_recharge = item.last_recharge;
-      //   exting.history.push(history);
-      // })
       customerObj.exting.push(exting);
   });
   const results = await getRepository(Customer).save(customerObj);
@@ -74,14 +66,7 @@ export const updateCustomer = async (
       customerData.doc = customerGlobalReq.doc;
     }
     if (customerGlobalReq.exting) {
-      // delete previous exting data
-      // customerData.exting.forEach(async exting => {
-      //     // await connection.manager.remove(Power, {id: power.id});
-      //     await getRepository(Exting).remove(exting);
-      // });
       let updateExting = customerGlobalReq.exting;
-      // customerData.exting = [];
-      // add new exting data
       updateExting.forEach((item: any) => {
         let exting: Exting = new Exting();
         exting.serial = item.serial;

@@ -18,15 +18,6 @@ export const getExting = async (
   return res.json(results);
 };
 
-// export const createExting = async (
-//   req: Request,
-//   res: Response
-// ): Promise<Response> => {
-//   const newUser = await getRepository(User).create(req.body);
-//   const results = await getRepository(User).save(newUser);
-//   return res.json(results);
-// };
-
 export const updateExting = async (
   req: Request,
   res: Response
@@ -40,8 +31,3 @@ export const updateExting = async (
 
   return res.json({msg: 'Exting Not found'});
 };
-
-// export const deleteExting = async (req: Request, res: Response): Promise<Response> => {
-//   const results = await getRepository(User).delete(req.params.id);
-//   return res.json(results);
-// };
